@@ -1,16 +1,17 @@
 <?php
 /**
- * @link      https://github.com/wbraganca/yii2-fancytree-widget
+ * @link      https://github.com/bluezed/yii2-fancytree-widget
+ * @copyright Copyright (c) 2015 Thomas Geppert
  * @copyright Copyright (c) 2014 Wanderson Bragança
- * @license   https://github.com/wbraganca/yii2-fancytree-widget/blob/master/LICENSE
+ * @license   https://github.com/bluezed/yii2-fancytree-widget/blob/master/LICENSE
  */
 
-namespace wbraganca\fancytree;
+namespace bluezed\fancytree;
 
 /**
  * Asset bundle for fancytree Widget
  *
- * @author Wanderson Bragança <wanderson.wbc@gmail.com>
+ * @author Thomas Geppert <bluezed.apps@gmail.com>
  */
 class FancytreeAsset extends \yii\web\AssetBundle
 {

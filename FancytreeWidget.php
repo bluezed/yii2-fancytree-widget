@@ -39,7 +39,10 @@ class FancytreeWidget extends \yii\base\Widget
     public function registerAssets()
     {
         $view = $this->getView();
-        FancytreeAsset::register($view);
+        $bundles = $view->assetManager->bundles;
+        if (!isset($bundles['bluezed\\fancytree\\FancytreeAsset'])) {
+            FancytreeAsset::register($view);
+        }
 
         if (isset($this->options['id'])) {
             $id = $this->options['id'];

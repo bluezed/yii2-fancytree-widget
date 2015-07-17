@@ -40,6 +40,8 @@ $data = [
 
 echo \bluezed\fancytree\FancytreeWidget::widget([
 	'options' =>[
+		'id' => 'my-fancy-tree',
+		'htmlOptions' => ['style' => 'margin-bottom: 15px;'],
 		'source' => $data,
 		'extensions' => ['dnd'],
 		'dnd' => [
@@ -65,4 +67,4 @@ echo \bluezed\fancytree\FancytreeWidget::widget([
 Attribution
 -----------
 
-Originally created by Wanderson Bragança (https://github.com/wbraganca/yii2-fancytree-widget)
+Originally created by Wanderson BraganÃ§a (https://github.com/wbraganca/yii2-fancytree-widget)

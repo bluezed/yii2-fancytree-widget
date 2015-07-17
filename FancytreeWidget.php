@@ -36,7 +36,7 @@ class FancytreeWidget extends \yii\base\Widget
     /**
      * Registers the needed assets
      */
-    public function registerAssets()
+     public function registerAssets()
     {
         $view = $this->getView();
         $bundles = $view->assetManager->bundles;
@@ -44,15 +44,22 @@ class FancytreeWidget extends \yii\base\Widget
             FancytreeAsset::register($view);
         }
 
+        $tagOptions = [];
         if (isset($this->options['id'])) {
-            $id = $this->options['id'];
+            $tagOptions['id'] = $this->options['id'];
             unset($this->options['id']);
         } else {
-            $id = 'fancytree_' . $this->id;
+            $tagOptions['id'] = 'fancytree_' . $this->id;
         }
-        echo Html::tag('div', '', ['id' => $id]);
+
+        if (isset($this->options['htmlOptions'])) {
+            $tagOptions = $tagOptions + $this->options['htmlOptions'];
+            unset($this->options['htmlOptions']);
+        }
+
+        echo Html::tag('div', '', $tagOptions);
 
         $options = Json::encode($this->options);
-        $view->registerJs('$("#' . $id . '").fancytree( ' .$options .')');
+        $view->registerJs('$("#' . $tagOptions['id'] . '").fancytree( ' .$options .')');
     }
 }
